@@ -47,7 +47,6 @@ end_time_iter_1_solution = time.time()
 #                 result.add(elem)
 #         return result
 
-
 start_time_iter_2_solution = time.time()
 
 with open('names_1.txt', 'r') as file1:

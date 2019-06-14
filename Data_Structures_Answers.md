@@ -22,13 +22,13 @@ The runtime complexity for the code in 'names.py' is O(n^2) (quadratic time) bec
 
 6. What is the space complexity of the provided code in `names.py`?
 
-The space complexity for the code in 'names.py' is also O(n^2) (quadratic space) because there are 2 'for' loops, one nested inside of the other and as n (the number of names) increases, the space/memory required to store those names from our operations must also increase exponentially (to the power of 2) every time 'names.py' is executed.
+The space complexity for the code in 'names.py' is also O(n) (linear space) because there as n (the number of names) increases, the space/memory required to store those names inside the memory already allocated for 'duplicates' array every time 'names.py' is executed.
 
 7. What is the runtime complexity of your optimized code in `names.py`?
 
 I was able to get the runtime complexity for my first iteration to the solution in 'names.py' down to O(n) (linear time) because I decreased the number of 'for' loops to only one.
 
-The runtime complexity of my second iteration to the solution is O(min(len(s),len(t)) (which is similar to O(1) on average) because there was only one 'for' loop used in the built-in .intersection() method and only required the creation/use of ONE set (basically a hash table), without any arrays (compared to the use of two sets and an array in my first iteration).
+The runtime complexity of my second iteration to the solution is O(n) (linear time) despite there being two 'for loops (one in the creation of the 'duplicates_iter_2.txt' file and another in the breakdown of Python's built-in .intersection() operation) because the runtime complexity of the .intersection() operation is O(min(len(s),len(t)) (which is supposedly similar to O(1) on average).
 
 8. What is the space complexity of your optimized code in `names.py`?
 
