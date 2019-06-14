@@ -39,28 +39,29 @@ start_time_iter_2_solution = time.time()
 
 with open('names_1.txt', 'r') as file1:
     with open('names_2.txt', 'r') as file2:
-        duplicate = set(file1).intersection(file2)
-        
-duplicate.discard('\n')
+        duplicates_iter_2 = set(file1).intersection(file2)
     
-with open('duplicates.txt', 'w') as file_out:
-    for line in duplicate:
+with open('duplicates_iter_2.txt', 'w') as file_out:
+    for line in duplicates_iter_2:
         file_out.write(line)
         
 f = open('duplicates_iter_2.txt', 'r')
-duplicates_iter_2 = f.read().split("\n")  # List containing 10000 names
+duplicates_iter_2 = f.read().split("\n", 63)
 f.close()
 
 end_time_iter_2_solution = time.time()
 
 #-----------------------------TEST CASES---------------------------------
 
+#----------------------ORIGINAL SOLUTION TESTS---------------------------
 print (f"{len(duplicates_original)} duplicates in original solution:\n\n{', '.join(duplicates_original)}\n")
 print (f"runtime for original: {end_time_original_solution - start_time_original_solution} seconds\n\n")
 
+#------------------------ITERATION #1 TESTS------------------------------
 print (f"{len(duplicates_iter_1)} duplicates in iteration #1:\n\n{', '.join(duplicates_iter_1)}\n")
 print (f"runtime for iteration #1: {end_time_iter_1_solution - start_time_iter_1_solution} seconds\n\n")
 
+#------------------------ITERATION #2 TESTS------------------------------
 print (f"{len(duplicates_iter_2)} duplicates in iteration #2:\n\n{', '.join(duplicates_iter_2)}\n")
 print (f"runtime for iteration #2: {end_time_iter_2_solution - start_time_iter_2_solution} seconds\n\n")
 
