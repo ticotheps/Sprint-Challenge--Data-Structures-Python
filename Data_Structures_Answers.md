@@ -18,9 +18,11 @@ The space complexity for 'get()' is O(n) (linear space) because (while n = the n
 
 5. What is the runtime complexity of the provided code in `names.py`?
 
-The runtime complexity for the code in 'names.py' is O(n^2) (quadratic time) because there are 2 'for' loops, one nested inside of the other. So, in this case, n = the number of names in the .txt files. As n (the number of names) increases, the number of operations that our 'for' loops are going to run will also increase every time 'names.py' is executed.
+The runtime complexity for the code in 'names.py' is O(n^2) (quadratic time) because there are 2 'for' loops, one nested inside of the other. In this case, n = the total number of names in the .txt files. So, as n (the number of names) increases, the number of operations that our 2 'for' loops are going to run will also increase every time 'names.py' is executed.
 
 6. What is the space complexity of the provided code in `names.py`?
+
+The space complexity for the code in 'names.py' is also O(n^2) (quadratic space) because there are 2 'for' loops, one nested inside of the other and as n (the number of names) increases, the space/memory required to store those names from our operations must also increase exponentially (to the power of 2) every time 'names.py' is executed.
 
 7. What is the runtime complexity of your optimized code in `names.py`?
 
