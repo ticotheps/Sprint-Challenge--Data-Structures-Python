@@ -89,12 +89,16 @@ class RingBuffer:
 buffer = RingBuffer(5)
 print(buffer.get())
 buffer.append('a')
+print(buffer.get())  # <== checks to make sure that 'None' is not returned
 buffer.append('b')
+print(buffer.get())  # <== checks to make sure that 'None' is not returned
 buffer.append('c')
+print(buffer.get())  # <== checks to make sure that 'None' is not returned
 buffer.append('d')
+print(buffer.get())  # <== checks to make sure that 'None' is not returned
 buffer.append('e')
 print(buffer.get())
 buffer.append('1')
-print(buffer.get())
+print(buffer.get())  # <== checks to make sure '1' replaces oldest item
 print("Length of buffer: ", len(buffer.storage))
 
