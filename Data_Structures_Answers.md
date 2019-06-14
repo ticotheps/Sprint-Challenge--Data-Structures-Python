@@ -14,10 +14,12 @@ The runtime complexity for 'get()' is O(n) (linear time) because (while n = the 
 
 4. What is the space complexity of your ring buffer's `get` method?
 
-5) What is the runtime complexity of the provided code in `names.py`?
+The space complexity for 'get()' is O(n) (linear space) because (while n = the number of items in the ring buffer) as n increases, the space/memory required to store the items from our operations must also increase every time the get() function is called.
 
-6) What is the space complexity of the provided code in `names.py`?
+5. What is the runtime complexity of the provided code in `names.py`?
 
-7) What is the runtime complexity of your optimized code in `names.py`?
+6. What is the space complexity of the provided code in `names.py`?
 
-8) What is the space complexity of your optimized code in `names.py`?
+7. What is the runtime complexity of your optimized code in `names.py`?
+
+8. What is the space complexity of your optimized code in `names.py`?
