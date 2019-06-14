@@ -72,22 +72,29 @@ class RingBuffer:
     #  Retrieves all the items in the buffer, excluding values of "None"
     def get(self):
         #  1) Creates a new empty array called 'gotBufferList'.
+        gotBufferList = []
         #  2) Loops over buffer and appends all NON-'None' values to the
-        #     'gotBufferList' array.     
+        #     'gotBufferList' array. 
+        for i in self.storage:
+            if i == None:
+                continue 
+            else:
+                gotBufferList.append(i) 
         #  3) Returns modified copy of original buffer, but without 'None'
         #     values included in the copy.
-        return self.storage
+        return gotBufferList
       
 #------------------------REFLECTION & ITERATION--------------------------
 
-buffer = RingBuffer(3)
+buffer = RingBuffer(5)
 print(buffer.get())
 buffer.append('a')
 buffer.append('b')
 buffer.append('c')
+buffer.append('d')
+buffer.append('e')
 print(buffer.get())
 buffer.append('1')
-buffer.append('2')
-buffer.append('3')
 print(buffer.get())
+print("Length of buffer: ", len(buffer.storage))
 
