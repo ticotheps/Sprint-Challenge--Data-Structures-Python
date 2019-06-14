@@ -2,13 +2,15 @@ Add your answers to the questions below.
 
 1. What is the runtime complexity of your ring buffer's `append` method?
 
-The runtime complexity for 'append()' is O(1) (linear time) because (while n = the value of the single 'item' that we're adding to the buffer) as n increases, we will only ever perform the same number of operations to add that 'item' each time the append() function is called.
+The runtime complexity for 'append()' is O(1) (constant time) because (while n = the value of the single 'item' that we're adding to the buffer) as n increases, we will only ever perform the same number of operations to add that 'item' each time the append() function is called.
 
 2. What is the space complexity of your ring buffer's `append` function?
 
-The space complexity for 'append()' is also O(1) (linear space)because (while n = the value of the single 'item' that we're adding to the buffer) as n increases, we will only ever have the same amount of space/memory that was originally allocated to the ring buffer when the buffer was instantiated with the 'capacity' parameter.
+The space complexity for 'append()' is also O(1) (constant space)because (while n = the value of the single 'item' that we're adding to the buffer) as n increases, we will only ever have the same amount of space/memory that was originally allocated to the ring buffer when the buffer was instantiated with the 'capacity' parameter.
 
 3. What is the runtime complexity of your ring buffer's `get` method?
+
+The runtime complexity for 'get()' is O(n) (linear time) because (while n = the number of items in the ring buffer) as n increases, our for loop will also increase the number of operations it performs when the get() function is called.
 
 4. What is the space complexity of your ring buffer's `get` method?
 
