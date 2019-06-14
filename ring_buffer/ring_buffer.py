@@ -99,6 +99,8 @@ print(buffer.get())  # <== checks to make sure that 'None' is not returned
 buffer.append('e')
 print(buffer.get())
 buffer.append('1')
-print(buffer.get())  # <== checks to make sure '1' replaces oldest item
-print("Length of buffer: ", len(buffer.storage))
+print(buffer.get())  # <== checks to make sure '1' replaces oldest item in
+                    #     the buffer vs adding '1' to end of buffer, which
+                    #     would increase the capacity of the buffer = bad.
+print("Length of buffer = ", len(buffer.storage), " = Capacity ")
 
