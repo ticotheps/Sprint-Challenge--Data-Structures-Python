@@ -1,7 +1,7 @@
 #-----------------------UNDERSTANDING THE PROBLEM------------------------
 
 #  Ring Buffer:
-    #  -A type of data structure
+    #  -A type of data structure, pseudo-circular in shape
     #  -Useful for:
             #  -Storing log information
             #  -Storing history information
@@ -49,19 +49,26 @@
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.current = 0   #  indicates total # of current items in buffer
+        self.current = 0   
+        #  indicates the left-most empty index in the buffer (while the
+        #  buffer is not yet full) or the oldest index (once the buffer 
+        #  is full)
         self.storage = [None]*capacity
 
     #  Adds an item to a designated location in the buffer, depending on
     #  if buffer has reached capacity
     def append(self, item):
-        #  1) If buffer IS full, overwrite oldest (1st) item with new item.
-        if self.current == self.capacity:
-            self.storage[self.current] = item
-            self.current = (self.current + 1) % self.capacity
-        #  2) If buffer is NOT full, add the element to the end of buffer.
-        else:
-            self.storage.append(item)
+        #  Replaces the value at RingBuffer[self.current] with item
+        self.storage[self.current] = item
+        #  1) If buffer is NOT full, add the element to the end of buffer.
+        if self.current < (self.capacity - 1):
+            self.current += 1
+            print("New current: ", self.current)
+        #  2) If buffer IS full, overwrite oldest (1st) item with new item.
+        else: #  if self.current == (self.capacity - 1):
+            self.current = 0
+            print("New current: ", self.current)
+
     #  Retrieves all the items in the buffer, excluding values of "None"
     def get(self):
         #  1) Creates a new empty array called 'gotBufferList'.
@@ -69,6 +76,18 @@ class RingBuffer:
         #     'gotBufferList' array.     
         #  3) Returns modified copy of original buffer, but without 'None'
         #     values included in the copy.
-        pass
+        return self.storage
       
 #------------------------REFLECTION & ITERATION--------------------------
+
+buffer = RingBuffer(3)
+print(buffer.get())
+buffer.append('a')
+buffer.append('b')
+buffer.append('c')
+print(buffer.get())
+buffer.append('1')
+buffer.append('2')
+buffer.append('3')
+print(buffer.get())
+
