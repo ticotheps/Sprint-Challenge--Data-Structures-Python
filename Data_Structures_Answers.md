@@ -26,4 +26,6 @@ The space complexity for the code in 'names.py' is also O(n^2) (quadratic space)
 
 7. What is the runtime complexity of your optimized code in `names.py`?
 
+I was able to get the runtime complexity for my first iteration to the solution in 'names.py' down to O(n) (linear time) because I decreased the number of 'for' loops to only one. The runtime complexity of my second iteration to the solution is O(min(len(s),len(t)) (which is similar to O(1) on average) because there was only one 'for' loop used in the built-in .intersection() method and only required the creation/use of ONE set (basically a hash table), without any arrays (compared to the use of two sets and an array in my first iteration).
+
 8. What is the space complexity of your optimized code in `names.py`?

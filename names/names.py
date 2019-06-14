@@ -35,12 +35,25 @@ end_time_iter_1_solution = time.time()
 
 #-----------------------------ITERATION #2-------------------------------
 
+#  Breakdown of Python's Built-In '.intersection()' operation:
+# def intersection(self, other):
+#         if len(self) <= len(other):
+#             little, big = self, other
+#         else:
+#             little, big = other, self
+#         result = set()
+#         for elem in little:
+#             if elem in big:
+#                 result.add(elem)
+#         return result
+
+
 start_time_iter_2_solution = time.time()
 
 with open('names_1.txt', 'r') as file1:
     with open('names_2.txt', 'r') as file2:
         duplicates_iter_2 = set(file1).intersection(file2)
-    
+          
 with open('duplicates_iter_2.txt', 'w') as file_out:
     for line in duplicates_iter_2:
         file_out.write(line)
