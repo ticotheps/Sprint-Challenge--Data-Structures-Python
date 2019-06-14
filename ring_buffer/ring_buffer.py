@@ -37,7 +37,7 @@
     #  Expected Output: an array (i.e. - ['a', 'b', 'c'])
     
     #  STEPS TO GET BUFFER:
-           #  1) Create a new empty array called 'gotBufferList'
+           #  1) Create a new empty array called 'gotBufferList'.
            #  2) Loop over buffer and append all NON-'None' values to
            #     'gotBufferList' array.
            #  3) Return 'gotBufferList' array.
@@ -45,20 +45,30 @@
 #  Please see commented code below, inside the 'RingBuffer' class.
 
 #------------------------IMPLEMENTING THE PLAN---------------------------
-#------------------------REFLECTION & ITERATION--------------------------
 
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.current = 0
+        self.current = 0   #  indicates total # of current items in buffer
         self.storage = [None]*capacity
 
-    #  Adds an item to the end of the buffer
+    #  Adds an item to a designated location in the buffer, depending on
+    #  if buffer has reached capacity
     def append(self, item):
-        #  1) If buffer is NOT full, add the element to the end of buffer.
-        #  2) If buffer IS full, overwrite oldest item with new item.
-        pass
-         
-    #  Returns all the items in the buffer, excluding values of "None"
+        #  1) If buffer IS full, overwrite oldest (1st) item with new item.
+        if self.current == self.capacity:
+            self.storage[self.current] = item
+            self.current = (self.current + 1) % self.capacity
+        #  2) If buffer is NOT full, add the element to the end of buffer.
+        else:
+            self.storage.append(item)
+    #  Retrieves all the items in the buffer, excluding values of "None"
     def get(self):
+        #  1) Creates a new empty array called 'gotBufferList'.
+        #  2) Loops over buffer and appends all NON-'None' values to the
+        #     'gotBufferList' array.     
+        #  3) Returns modified copy of original buffer, but without 'None'
+        #     values included in the copy.
         pass
+      
+#------------------------REFLECTION & ITERATION--------------------------
